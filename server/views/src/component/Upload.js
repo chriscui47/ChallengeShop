@@ -1,14 +1,13 @@
-import React, { Component, useState } from "react";
-import { Modal, Button } from "react-bootstrap";
 import axios from "axios";
-
+import { Modal, Button } from "react-bootstrap";
+import React, { Component, useState,useEffect } from "react";
 
 const Upload = () => {
   const [show, setShow] = useState(false);
   const [description, setDescription] = useState("");
+  const [tags, setTags] = useState("");
   const [image, setImage] = useState(null);
   const [error, setError] = useState(false);
-  const [errortext, seterrortext] = useState("");
 
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
@@ -21,9 +20,10 @@ const Upload = () => {
 
       formData.append("picture", image, image.name);
       formData.append("desc", description);
+      formData.append("tags", tags);
 
-      let res = await axios.post("http://localhost:5000/api/upload", formData);
-      alert(res);
+      let res = await axios.post("/api/upload", formData);
+      window.location.reload(true);
       setError(false);
       handleClose();
     } catch (error) {
@@ -70,6 +70,17 @@ const Upload = () => {
             </div>
 
             <div className="form-group">
+              <label htmlFor="tags">Tags</label>
+              <input
+                onChange={(e) => setTags(e.target.value)}
+                type="text"
+                value={tags}
+                className="form-control"
+                required
+                id="tags"
+              />
+            </div>
+            <div className="form-group">
               <div className="custom-file">
                 <input
                   type="file"
@@ -90,8 +101,7 @@ const Upload = () => {
 
             {error ? (
               <div className="text-danger">
-                {" "}
-                error whore{" "}
+                Error
               </div>
             ) : null}
           </form>

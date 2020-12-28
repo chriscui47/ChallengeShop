@@ -1,0 +1,21 @@
+.parent {
+    width: 100rem;
+    height: 80rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    position:relative;
+    margin-left: 0vw;
+}
+  
+  .item {
+    width:25rem;
+    height:20rem;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+  }
+
+  .description{
+
+  }
