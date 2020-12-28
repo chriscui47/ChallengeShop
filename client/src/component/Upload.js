@@ -22,7 +22,7 @@ const Upload = () => {
       formData.append("desc", description);
       formData.append("tags", tags);
 
-      let res = await axios.post("/api/upload", formData);
+      let res = await axios.post("https://shopifychallengechris.herokuapp.com/api/upload", formData);
       window.location.reload(true);
       setError(false);
       handleClose();

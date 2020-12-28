@@ -21,7 +21,7 @@ const ImageGallery = (props) => {
   const getImage = async () => {
     try {
         
-      let { data } = await axios.get("/api/images");
+      let { data } = await axios.get("https://shopifychallengechris.herokuapp.com/api/images");
       setImages(data.images);
     } catch (error) {
       console.error(error);
@@ -30,7 +30,7 @@ const ImageGallery = (props) => {
 
   const handleDelete =async (id) => {
     try{
-      let { data } = await axios.delete(`/api/delete/${id}`);
+      let { data } = await axios.delete(`https://shopifychallengechris.herokuapp.com/api/delete/${id}`);
       alert("Image deleted! Refresh to see the changes")
     }
     catch(error){
@@ -41,7 +41,7 @@ const ImageGallery = (props) => {
   const handleGetImage =async (id) => {
     try{
       console.log(id);
-      let { data } = await axios.get(`/api/images/${id}`);
+      let { data } = await axios.get(`https://shopifychallengechris.herokuapp.com/api/images/${id}`);
     }
     catch(error){
       console.error(error);
