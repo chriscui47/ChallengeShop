@@ -1,8 +1,29 @@
+
 const express = require("express");
 const {upload,cloudinary} = require("../services/upload");
 const router = express.Router();
 const Image = require("../models/Image");
-var ObjectId = require('mongodb').ObjectId; 
+const cors = require('cors');
+var bodyParser = require("body-parser");
+
+router.use(cors())
+
+router.use(function(req, res, next) {
+  var allowedOrigins = ['http://localhost:5000', 'http://localhost:3000', 'https://relaxed-sinoussi-846966.netlify.app'];
+
+  var origin = req.headers.origin;
+  if(allowedOrigins.indexOf(origin) > -1){
+       res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS,POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, application/json');
+  res.header('Access-Control-Allow-Credentials', true);
+
+  return next();
+});
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+
 router.get("/images", async (req, res) => {
     try {
       let images = await Image.find({});

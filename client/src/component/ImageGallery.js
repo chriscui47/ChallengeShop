@@ -21,7 +21,7 @@ const ImageGallery = (props) => {
   const getImage = async () => {
     try {
         
-      let { data } = await axios.get("https://shopifychallengechris.herokuapp.com/api/images");
+      let { data } = await axios.get("/api/images");
       setImages(data.images);
     } catch (error) {
       console.error(error);
@@ -30,8 +30,9 @@ const ImageGallery = (props) => {
 
   const handleDelete =async (id) => {
     try{
-      let { data } = await axios.delete(`https://shopifychallengechris.herokuapp.com/api/delete/${id}`);
-      alert("Image deleted! Refresh to see the changes")
+      let { data } = await axios.delete(`/api/delete/${id}`);
+      window.location.reload(true);
+
     }
     catch(error){
       console.error(error);
@@ -41,14 +42,14 @@ const ImageGallery = (props) => {
   const handleGetImage =async (id) => {
     try{
       console.log(id);
-      let { data } = await axios.get(`https://shopifychallengechris.herokuapp.com/api/images/${id}`);
+      let { data } = await axios.get(`/api/images/${id}`);
     }
     catch(error){
       console.error(error);
     }
   }
 
-  return (<div className="parent" >
+  return (<div className="parent" style={{marginTop:'0vw'}}>
   {images
     ? images.slice(0,10).map((image) => {
         return (
@@ -57,15 +58,14 @@ const ImageGallery = (props) => {
           <span key={image._id} >
             <img
               src={image.url}
-              width="250rem" 
+              width="200rem" 
               height="250rem"
               />
             </span>
-            <div>
+            <div >
               <h5>{image.description}</h5>
-               <br/>
+              <div>Tags: {image.tags.map(txt => <span>{txt}, </span>)} </div>
                <Button onClick={id=>handleDelete(image._id)}>Delete</Button>
-               <Button onClick={id=>handleGetImage(image._id)}>Get</Button>
               </div>
               </center>
 

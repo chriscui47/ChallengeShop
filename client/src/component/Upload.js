@@ -22,7 +22,7 @@ const Upload = () => {
       formData.append("desc", description);
       formData.append("tags", tags);
 
-      let res = await axios.post("https://shopifychallengechris.herokuapp.com/api/upload", formData);
+      let res = await axios.post("/api/upload", formData);
       window.location.reload(true);
       setError(false);
       handleClose();
@@ -46,10 +46,10 @@ const Upload = () => {
 
   return (
     <>
-      <button className="btn btn-primary m-2" onClick={handleShow}>
+      <Button size="lg"  onClick={handleShow}>
         {" "}
         Upload
-      </button>
+      </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -70,7 +70,7 @@ const Upload = () => {
             </div>
 
             <div className="form-group">
-              <label htmlFor="tags">Tags</label>
+              <label htmlFor="tags">Tags (1 word each, seperated by commas)</label>
               <input
                 onChange={(e) => setTags(e.target.value)}
                 type="text"
