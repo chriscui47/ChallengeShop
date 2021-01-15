@@ -1,5 +1,4 @@
 # Shopify-image
-## Getting Started with My image upload app
 You can visit the site here:
 [https://relaxed-sinoussi-846966.netlify.app/]
 
@@ -23,6 +22,7 @@ Frontend side uses react
 * [Mongodb](https://www.mongodb.com/)
 * [NodeJS](https://nodejs.org/en/download/)
 * [Cloudinary](https://cloudinary.com/users/login)
+## Getting Started with My image upload app
 
 ### Installation
 
