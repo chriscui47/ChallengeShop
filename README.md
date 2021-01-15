@@ -12,8 +12,8 @@ Every image you upload has tags. Feel free to use the search bar, which will fil
 
 * Users can upload images
 * Delete images
-*Add tags to images
-*Search images by tags
+* Add tags to images
+* Search images by tags
 
 ### Built With
 
