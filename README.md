@@ -9,6 +9,9 @@ Every image you upload has tags. Feel free to use the search bar, which will fil
 
 <!-- ABOUT THE PROJECT -->
 ## Features
+
+* Users can upload images
+* Delete images
 -Users can upload images
 -Delete images
 -Add tags to images
