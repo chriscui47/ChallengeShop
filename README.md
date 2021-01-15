@@ -51,12 +51,12 @@ CLOUD_NAME=
 5. NPM start in the client folder
 6. node index.js in the server folder
 
+![Alt text](https://user-images.githubusercontent.com/46657850/104680080-110ffc00-56bd-11eb-9764-6564a0de1dea.PNG)
 
-
+https://user-images.githubusercontent.com/46657850/104680080-110ffc00-56bd-11eb-9764-6564a0de1dea.PNG
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
