@@ -9,7 +9,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   folder: "app",
-  allowedFormats: ["jpg", "png", "jpeg"],
+  allowedFormats: ["jpg", "png", "jpeg","gif"],
   transformation: [{ width: 500, height: 500, crop: "limit" }],
 });
 const upload = multer({ storage: storage });

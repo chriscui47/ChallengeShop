@@ -22,7 +22,7 @@ const Upload = () => {
       formData.append("desc", description);
       formData.append("tags", tags);
 
-      let res = await axios.post("/api/upload", formData);
+      let res = await axios.post("https://shopifychallengechris.herokuapp.com/api/upload", formData);
       window.location.reload(true);
       setError(false);
       handleClose();
@@ -46,9 +46,9 @@ const Upload = () => {
 
   return (
     <>
-      <Button size="lg"  onClick={handleShow}>
+      <Button variant="outline-info" size="lg"  onClick={handleShow}>
         {" "}
-        Upload
+        Upload Image
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -58,7 +58,7 @@ const Upload = () => {
         <Modal.Body>
           <form onSubmit={onSubmit}>
             <div className="form-group">
-              <label htmlFor="desc">description</label>
+              <label htmlFor="desc">Description</label>
               <input
                 onChange={(e) => setDescription(e.target.value)}
                 type="text"
@@ -87,6 +87,8 @@ const Upload = () => {
                   onChange={(e) => setImage(e.target.files[0])}
                   className="custom-file-input"
                   id="image"
+                  accept="image/gif, image/jpeg, image/png"
+
                 />
 
                 <label className="custom-file-label" htmlFor="image">

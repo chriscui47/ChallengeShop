@@ -16,6 +16,9 @@ useUnifiedTopology: true,
 const cors = require('cors');
 var bodyParser = require("body-parser");
 
+const wakeUpDyno = require("./wokeDyno.js"); // my module!
+const DYNO_URL = "https://relaxed-sinoussi-846966.netlify.app/"; // the url of your dyno
+
 
 app.use(cors());
 
@@ -40,5 +43,9 @@ app.use(cors());
   app.use(bodyParser.urlencoded({ extended: true }));
   
 
-app.listen(PORT, () => console.log(`listening on porht : ${PORT}`));
+app.listen(PORT, () => 
+
+wakeUpDyno(DYNO_URL) // will start once server starts
+
+);
 

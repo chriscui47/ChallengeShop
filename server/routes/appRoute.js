@@ -29,10 +29,10 @@ router.get("/images", async (req, res) => {
       let images = await Image.find({});
       console.log("finding image")
       console.log(images[0])
-      return res.status(200).json({ images, msg: "image info fetched"    });
+      return res.status(200).json({ images, msg: "image"    });
     } catch (error) {
       console.error(error);
-        return res.status(500).json({ error: "some error occured" });
+        return res.status(500).json({ error: "error" });
     }
     }
       
@@ -46,7 +46,7 @@ router.get("/images/:id", async (req, res) => {
     return res.status(200).json({msg: "image received"    });
   } catch (error) {
     console.error(error);
-      return res.status(500).json({ error: "some error occured" });
+      return res.status(500).json({ error: " error occured" });
   }
 }
     
@@ -56,10 +56,10 @@ router.get("/search/:searchquery", async (req, res) => {
     console.log(req.params.searchquery);
     let images = await Image.find( { tags: req.params.searchquery }  )
     console.log(images);
-    return res.status(200).json({ images, msg: "image info fetched"    });
+    return res.status(200).json({ images, msg: "image received"    });
   } catch (error) {
     console.error(error);
-      return res.status(500).json({ error: "some error occured" });
+      return res.status(500).json({ error: "error occured" });
   }
   }
     
@@ -77,7 +77,7 @@ router.post("/upload", upload.single("picture",public_id=>req.body.id), async (r
             tags:tagsArray
     });
     await image.save();
-    return res.status(200).json({ msg: "image successfully saved" });
+    return res.status(200).json({ msg: "image saved!" });
     } else {
         console.log(req.file);
         return res.status(422).json({ error: "invalid" });
