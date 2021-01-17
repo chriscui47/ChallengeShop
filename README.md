@@ -21,7 +21,7 @@ Frontend side uses react
 * [Mongodb](https://www.mongodb.com/)
 * [NodeJS](https://nodejs.org/en/download/)
 * [Cloudinary](https://cloudinary.com/users/login)
-## Getting Started with My image upload app
+## Running my image upload hub locally
 
 ### Installation
 
