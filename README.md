@@ -16,7 +16,7 @@ Every image you upload has tags. Feel free to use the search bar, which will fil
 ### Built With
 
 Mongodb was used for the backend database along with Node.js and express. Cloudionary was used to store the images.
-Frontend side uses react
+Frontend side uses React
 
 * [Mongodb](https://www.mongodb.com/)
 * [NodeJS](https://nodejs.org/en/download/)
