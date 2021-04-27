@@ -17,7 +17,7 @@ const cors = require('cors');
 var bodyParser = require("body-parser");
 
 const wakeUpDyno = require("./wokeDyno.js"); // my module!
-const DYNO_URL = "https://relaxed-sinoussi-846966.netlify.app/"; // the url of your dyno
+const DYNO_URL = "https://shopifychallengechris.herokuapp.com/"; 
 
 
 app.use(cors());
@@ -31,7 +31,7 @@ app.use(cors());
     if(allowedOrigins.indexOf(origin) > -1){
          res.setHeader('Access-Control-Allow-Origin', origin);
     }
-    console.log("HEREEEEEEEEEE");
+    console.log("HERreeee");
     console.log(origin);
     res.header('Access-Control-Allow-Methods', 'GET, OPTIONS,POST');
     res.header('Access-Control-Allow-Headers', 'Content-Type, application/json');
@@ -44,8 +44,7 @@ app.use(cors());
   
 
 app.listen(PORT, () => 
-
-wakeUpDyno(DYNO_URL) // will start once server starts
-
+//wakeUpDyno(DYNO_URL) // will start once server starts
+console.log("hello")
 );
 

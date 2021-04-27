@@ -49,7 +49,7 @@ const getImage = async () => {
     <div  style={{background:'#EAEDED',width:'100vw'}}>      
 
 <Navbar bg="dark" variant="dark" style={{marginBottom:'4vh'}}>
-    <Navbar.Brand href="#home">Chris Cui Shopify Project</Navbar.Brand>
+    <Navbar.Brand href="#home">Chris Cui Shopify Project Fall 2021</Navbar.Brand>
     <Nav className="mr-auto" style={{marginLeft:'2vw'}}>
       <Button  variant="outline-info" style= {{marginRight:'3vw'}}onClick = {getImage}>View All Images</Button> 
       <Upload/>
